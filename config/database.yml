@@ -81,6 +81,10 @@ test:
 #
 production:
   <<: *default
-  database: ab_tool_tester_production
-  username: ab_tool_tester
-  password: <%= ENV["AB_TOOL_TESTER_DATABASE_PASSWORD"] %>
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  port: <%= ENV["PGPORT"] %>
+  host: <%= ENV["PGHOST"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+
